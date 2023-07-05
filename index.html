@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Age calculator app</title>
+
+</head>
+
+<body>
+  <main class="container">
+
+    <form action="" method="get" class="info__form">
+      <div class="info__form__div" id="day-div"><label for="day" id="day-label">Day</label><input type="text" name="" id="day"
+          placeholder="DD">
+      </div>
+      <div class="info__form__div" id="month-div"><label for="month" id="month-label">Month</label><input type="text" name="" id="month"
+          placeholder="MM">
+      </div>
+      <div class="info__form__div" id="year-div"><label for="year" id="year-label">Year</label><input type="text" name="" id="year"
+          placeholder="YYYY">
+      </div>
+    </form>
+
+    <section class="btn__section">
+      <div class="aesthetic__div">
+        <div class="aesthetic__div__line"></div>
+        <div></div>
+      </div>
+      <div class="btn__div" onclick="submitForm()"><img src="assets/images/icon-arrow.svg" alt=""></div>
+    </section>
+
+    <section class="result__section">
+      <div class="result__section__div">
+        <p class="p__year">--</p>
+        <p class="p__year__text">years</p>
+      </div>
+      <div class="result__section__div">
+        <p class="p__month">--</p>
+        <p class="p__month__text">months</p>
+      </div>
+      <div class="result__section__div">
+        <p class="p__days">--</p>
+        <p class="p__days__text">days</p>
+      </div>
+    </section>
+
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/lorenaterenzi">Lorena Terenzi</a>.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
