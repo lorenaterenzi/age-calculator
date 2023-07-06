@@ -56,11 +56,11 @@ function checkIfValid(day, month, year) {
     }
 
     if (month > 11) {
-       turnStuffRed(labelMonth, boxMonth)
+        turnStuffRed(labelMonth, boxMonth)
 
-       var invalidMonth;
-       var monthClass = 'month-class'
-       invalidWarning(divMonth, invalidMonth, monthClass);
+        var invalidMonth;
+        var monthClass = 'month-class'
+        invalidWarning(divMonth, invalidMonth, monthClass);
     } else if (divMonth.contains(invalidMonthDiv)) {
         resetColor(labelMonth, boxMonth)
         invalidMonthDiv.remove();
@@ -176,15 +176,48 @@ function calcAge(birth, month, days, year) {
 
     var ageMilliseconds = today - birth;
 
+    var thisDay = new Date().getUTCDate();
+
+    var thisMonth = new Date().getMonth();
+
+    var thisYear = new Date().getFullYear();
+
     //one day in milliseconds
     var oneDay = 24 * 60 * 60 * 1000;
 
     var milliToDays = ageMilliseconds / oneDay;
 
-    var ageDays = Math.floor(((milliToDays % 365.25) % 30));
+    //calculo dos dias
+    var ageDays;
 
-    var ageMonths = Math.floor((milliToDays % 365.25) / 30);
+    if (days > thisDay) {
 
+        var nOfDays = getDays(thisMonth - 1, thisYear);
+        var ageOfDays = (nOfDays - days) + thisDay;
+
+        ageDays = ageOfDays;
+
+    } else if (days < thisDay) {
+
+        ageDays = thisDay - days;
+
+    }
+
+    //calculo dos meses
+    var ageMonths;
+
+    if (month > thisMonth) {
+        var ageOfMonths = (11 - month) + thisMonth
+
+        ageMonths = ageOfMonths;
+
+    } else if (month < thisMonth) {
+
+        ageMonths = Math.floor((milliToDays % 365.25) / 30);
+
+    }
+
+    //calculo dos anos
     var ageYears = Math.floor(milliToDays / 365.25);
 
     //condições para postar a idade
