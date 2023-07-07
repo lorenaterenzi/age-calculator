@@ -17,3 +17,4 @@ It really was a challenge, as a beginner I've had a lot of research to do and in
  - HTML
  - CSS
  - JavaScript
+ - Builted on VSCode
