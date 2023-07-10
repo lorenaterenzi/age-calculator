@@ -199,7 +199,7 @@ input:focus {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 683px) {
 
 
     .container {
@@ -238,6 +238,10 @@ input:focus {
 @media (max-width: 320px) {
     .container {
         width: 100%;
+    }
+
+    .result__section p {
+        font-size: 42px;
     }
 
     .attribution {
