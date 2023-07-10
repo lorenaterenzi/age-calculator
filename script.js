@@ -208,7 +208,11 @@ function calcAge(birth, month, days, year) {
     ageMonths = Math.floor((milliToDays % 365.25) / 30);
 
     //calculo dos anos
-    var ageYears = Math.floor(milliToDays / 365.25);
+    if (month > thisMonth) {
+        ageYears = thisYear-year-1;
+    } else {
+        ageYears = thisYear-year;
+    }
 
     //condições para postar a idade
     if (ageDays >= 0 && ageMonths >= 0 && ageYears >= 0 && month <= 11 && days <= getDays(month, year)) {
